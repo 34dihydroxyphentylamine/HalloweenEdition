@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Login-Seite</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f4f4f4;
+        }
+        .login-container {
+            width: 300px;
+            padding: 16px;
+            background-color: white;
+            margin: 50px auto;
+            box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1);
+        }
+        .login-container input {
+            width: 100%;
+            padding: 8px;
+            margin: 8px 0;
+        }
+        .login-container button {
+            width: 100%;
+            padding: 10px;
+            background-color: #4CAF50;
+            color: white;
+            border: none;
+            cursor: pointer;
+        }
+        .error {
+            color: red;
+            display: none;
+        }
+        .success {
+            color: green;
+            display: none;
+        }
+    </style>
+</head>
+<body>
+
+<div class="login-container">
+    <h2>Login</h2>
+    <label for="email">E-Mail:</label>
+    <input type="text" id="email" placeholder="Geben Sie Ihre E-Mail ein">
+    <label for="password">Passwort:</label>
+    <input type="password" id="password" placeholder="Geben Sie Ihr Passwort ein">
+    <button onclick="checkLogin()">Einloggen</button>
+    <p class="error" id="error">Falsche Login-Daten!</p>
+    <p class="success" id="success">Hurra, Erfolg!</p>
+</div>
+
+<script>
+    const correctEmail = "schueler@example.com";
+    const correctPassword = "12345";
+
+    function checkLogin() {
+        const email = document.getElementById('email').value;
+        const password = document.getElementById('password').value;
+        if (email === correctEmail && password === correctPassword) {
+            document.getElementById('success').style.display = 'block';
+            document.getElementById('error').style.display = 'none';
+        } else {
+            document.getElementById('error').style.display = 'block';
+            document.getElementById('success').style.display = 'none';
+        }
+    }
+</script>
+
+</body>
+</html>
